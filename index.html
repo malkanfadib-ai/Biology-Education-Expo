@@ -507,29 +507,24 @@
             </div>
         </div>
 
-        <!-- Timer Hitung Mundur -->
-        <div class="countdown-box">
-            <h3><i class="fa-regular fa-clock"></i> Batas Penutupan Pendaftaran</h3>
-            <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">3 Agustus - 26 September 2026</p>
-            <div class="timer">
+        <div class="timer">
                 <div class="time-card">
-                    <span>26</span>
+                    <span id="hari">00</span>
                     <label>Hari</label>
                 </div>
                 <div class="time-card">
-                    <span>12</span>
+                    <span id="jam">00</span>
                     <label>Jam</label>
                 </div>
                 <div class="time-card">
-                    <span>30</span>
+                    <span id="menit">00</span>
                     <label>Menit</label>
                 </div>
                 <div class="time-card">
-                    <span>00</span>
+                    <span id="detik">00</span>
                     <label>Detik</label>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Bagian 4 Pilihan Mata Lomba Terhubung ke Google Form -->
@@ -666,3 +661,31 @@
 
 </body>
 </html>
+<!-- Script Hitung Mundur -->
+    <script>
+        // Mengatur waktu deadline ke 2 Oktober 2026
+        const targetDate = new Date("Oct 2, 2026 23:59:59").getTime();
+
+        const hitungMundur = setInterval(function() {
+            const sekarang = new Date().getTime();
+            const selisih = targetDate - sekarang;
+
+            if (selisih >= 0) {
+                // Perhitungan waktu
+                const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+                const jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
+                const detik = Math.floor((selisih % (1000 * 60)) / 1000);
+
+                // Menampilkan ke HTML
+                document.getElementById("hari").innerText = hari < 10 ? "0" + hari : hari;
+                document.getElementById("jam").innerText = jam < 10 ? "0" + jam : jam;
+                document.getElementById("menit").innerText = menit < 10 ? "0" + menit : menit;
+                document.getElementById("detik").innerText = detik < 10 ? "0" + detik : detik;
+            } else {
+                // Jika waktu habis
+                clearInterval(hitungMundur);
+                document.querySelector(".timer").innerHTML = "<h4 style='color: var(--green-dark); margin-top: 15px;'>Pendaftaran Telah Ditutup!</h4>";
+            }
+        }, 1000);
+    </script>
