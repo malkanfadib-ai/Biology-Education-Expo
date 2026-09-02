@@ -57,26 +57,45 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
+            padding: 10px 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(202, 138, 4, 0.15);
         }
 
-        .logo {
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-weight: 800;
-            color: var(--green-uin);
-            font-size: 1.3rem;
+            gap: 14px;
             text-decoration: none;
         }
 
-        .logo-icon {
-            font-size: 2rem;
-            color: var(--yellow-dark);
+        .logo-imgs {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo-img {
+            height: 42px;
+            width: 42px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo-text span {
+            font-weight: 800;
+            color: var(--green-uin);
+            font-size: 1.25rem;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .logo-text small {
+            font-size: 0.72rem;
+            color: #64748b;
+            font-weight: 500;
         }
 
         .nav-links {
@@ -144,7 +163,7 @@
             font-size: 2.8rem;
             line-height: 1.2;
             color: var(--green-dark);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 800;
         }
 
@@ -154,11 +173,12 @@
 
         .hero-theme {
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: #475569;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             border-left: 3px solid var(--yellow-dark);
-            padding-left: 10px;
+            padding-left: 12px;
+            max-width: 650px;
         }
 
         .hero-btns {
@@ -248,14 +268,19 @@
             font-weight: 600;
         }
 
-        /* Section Global */
-        .section {
-            padding: 80px 5%;
+        /* Area Pilihan Lomba */
+        .registration-section {
+            background: #ffffff;
+            border-radius: 30px;
+            padding: 60px 5%;
+            margin: 20px 5%;
+            box-shadow: 0 10px 35px rgba(202, 138, 4, 0.12);
+            border: 2px solid var(--yellow-accent);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .section-title h2 {
@@ -267,16 +292,6 @@
         .section-title p {
             color: #64748b;
             margin-top: 5px;
-        }
-
-        /* Area Pendaftaran 4 Pilihan Lomba */
-        .registration-section {
-            background: #ffffff;
-            border-radius: 30px;
-            padding: 60px 5%;
-            margin: 20px 5%;
-            box-shadow: 0 10px 35px rgba(202, 138, 4, 0.12);
-            border: 2px solid var(--yellow-accent);
         }
 
         .registration-grid {
@@ -350,7 +365,7 @@
             box-shadow: 0 4px 12px rgba(202, 138, 4, 0.3);
         }
 
-        /* Linimasa */
+        /* Timeline Section */
         .timeline-section {
             background: rgba(255, 255, 255, 0.7);
             border-radius: 25px;
@@ -448,6 +463,10 @@
                 flex-direction: column;
                 text-align: center;
             }
+            .hero-theme {
+                border-left: none;
+                padding-left: 0;
+            }
             .hero-btns {
                 justify-content: center;
             }
@@ -462,31 +481,34 @@
 </head>
 <body>
 
-    <!-- Bar Pengumuman & Download Guidebook -->
+    <!-- Bar Pengumuman & Tautan Guidebook Google Drive -->
     <div class="top-bar">
         <div><i class="fa-solid fa-bullhorn"></i> Pendaftaran BEE 9 Tingkat Nasional Resmi Dibuka!</div>
         <div>
-            <a href="https://drive.google.com/drive/folders/1MUAWVf6VD2s84QLRH1qhoEXzfhSwS8Hp" target="_blank">
-                <i class="fa-solid fa-download"></i> Unduh Guidebook
+            <a href="https://drive.google.com/drive/folders/1MUAWVf6VD2s84QLRH1qhoEXzfhSwS8Hp" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-download"></i> Buka Guidebook & Panduan
             </a>
         </div>
     </div>
 
     <!-- Navigasi -->
     <nav>
-        <a href="#" class="logo">
-            <i class="fa-solid fa-dna logo-icon"></i>
-            <div>
-                <span>BEE 9</span>
-                <span style="display:block; font-size: 0.7rem; color: #64748b; font-weight: 500;">HMPS Tadris Biologi - FITK UIN Jakarta</span>
+        <div class="logo-container">
+            <div class="logo-imgs">
+                <img src="images%20(1).jpeg" alt="Logo UIN Syarif Hidayatullah Jakarta" class="nav-logo-img">
+                <img src="images.jpeg" alt="Logo HMPS Tadris Biologi" class="nav-logo-img">
+                <img src="WhatsApp%20Image%202026-09-02%20at%2010.28.50.jpeg" alt="Logo Biology Education Expo 9" class="nav-logo-img">
             </div>
-        </a>
+            <div class="logo-text">
+                <span>BEE 9</span>
+                <small>HMPS Tadris Biologi - FITK UIN Jakarta</small>
+            </div>
+        </div>
         <ul class="nav-links">
             <li><a href="#beranda">Beranda</a></li>
             <li><a href="#daftar-lomba">Pilihan Lomba</a></li>
             <li><a href="#timeline">Jadwal Acara</a></li>
             <li><a href="#kontak">Narahubung</a></li>
-            <!-- Tombol Navigasi Langsung Lompat ke Pilihan Lomba -->
             <li><a href="#daftar-lomba" class="btn-register-nav"><i class="fa-solid fa-file-signature"></i> Daftar Sekarang</a></li>
         </ul>
     </nav>
@@ -497,79 +519,84 @@
             <span class="hero-badge"><i class="fa-solid fa-seedling"></i> Tingkat SMA/MA Sederajat Se-Indonesia</span>
             <h1>Biology Education <span>Expo 9</span></h1>
             <p class="hero-theme">"Building Innovative Opportunities for a Sustainable Planet: Harmony, Education, Resilience, and Excellence"</p>
+
             <div class="hero-btns">
-                <!-- Tombol Hero Langsung Lompat ke Pilihan Lomba -->
                 <a href="#daftar-lomba" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Daftar Sekarang</a>
                 
-                <a href="https://drive.google.com/drive/folders/1MUAWVf6VD2s84QLRH1qhoEXzfhSwS8Hp" class="btn-secondary" target="_blank">
+                <a href="https://drive.google.com/drive/folders/1MUAWVf6VD2s84QLRH1qhoEXzfhSwS8Hp" class="btn-secondary" target="_blank" rel="noopener noreferrer">
                     <i class="fa-solid fa-file-pdf"></i> Buku Panduan
                 </a>
             </div>
         </div>
 
-        <div class="timer">
+        <!-- Timer Hitung Mundur Otomatis Berjalan -->
+        <div class="countdown-box">
+            <h3><i class="fa-regular fa-clock"></i> Batas Penutupan Pendaftaran</h3>
+            <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">3 Agustus - 26 September 2026</p>
+            <div class="timer">
                 <div class="time-card">
-                    <span id="hari">00</span>
+                    <span id="days">00</span>
                     <label>Hari</label>
                 </div>
                 <div class="time-card">
-                    <span id="jam">00</span>
+                    <span id="hours">00</span>
                     <label>Jam</label>
                 </div>
                 <div class="time-card">
-                    <span id="menit">00</span>
+                    <span id="minutes">00</span>
                     <label>Menit</label>
                 </div>
                 <div class="time-card">
-                    <span id="detik">00</span>
+                    <span id="seconds">00</span>
                     <label>Detik</label>
                 </div>
             </div>
+        </div>
     </section>
 
-    <!-- Bagian 4 Pilihan Mata Lomba Terhubung ke Google Form -->
+    <!-- Area 4 Pilihan Mata Lomba Terhubung ke Google Form -->
     <section class="registration-section" id="daftar-lomba">
-        <div class="section-title" style="margin-bottom: 35px;">
+        <div class="section-title">
             <h2>Pilih <span>Cabang Lomba</span></h2>
-            <p>Silakan klik mata lomba di bawah untuk mengisi formulir pendaftaran resmi</p>
+            <p>Silakan klik tombol daftar pada mata lomba untuk mengisi formulir resmi</p>
         </div>
 
         <div class="registration-grid">
-            <!-- 1. LKTI Form -->
+            <!-- 1. LKTI -->
             <div class="reg-card">
                 <div class="reg-icon"><i class="fa-solid fa-flask-vial"></i></div>
                 <h3>Karya Tulis Ilmiah (LKTI)</h3>
-                <p>Kompetisi tulisan formal dan gagasan riset kreatif tingkat SMA/MA.</p>
+                <p>Kompetisi tulisan formal dan gagasan riset kreatif tingkat SMA/MA sederajat.</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9TGIrIUZhULuw3VOUVe24Z0A7e-iWxFoC3myp70BgAnnvXA/viewform?usp=preview" target="_blank" class="btn-apply">
                     Daftar LKTI <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
 
-            <!-- 2. Praktikum Form -->
+            <!-- 2. Praktikum -->
             <div class="reg-card">
                 <div class="reg-icon"><i class="fa-solid fa-microscope"></i></div>
                 <h3>Lomba Praktikum</h3>
-                <p>Uji kemampuan soft-skill dan teknik prosedur laboratorium biologi.</p>
+                <p>Uji kemampuan soft-skill dan teknik prosedur laboratorium biologi siswa.</p>
                 <a href="https://forms.gle/N9RjGfAkg4avUjjP7" target="_blank" class="btn-apply">
                     Daftar Praktikum <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
 
-            <!-- 3. Short Video Form -->
+            <!-- 3. Short Video -->
             <div class="reg-card">
                 <div class="reg-icon"><i class="fa-solid fa-video"></i></div>
                 <h3>Lomba Short Video</h3>
-                <p>Kreasi video edukatif mengenai isu biologi, kesehatan, dan lingkungan.</p>
+                <p>Kreasi video edukatif mengenai isu biologi, kesehatan, dan kelestarian lingkungan.</p>
                 <a href="https://forms.gle/CrEnqeFXhn4UMgMn9" target="_blank" class="btn-apply">
                     Daftar Short Video <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
 
-            <!-- 4. LCTB Form -->
+            <!-- 4. LCTB -->
             <div class="reg-card">
                 <div class="reg-icon"><i class="fa-solid fa-brain"></i></div>
                 <h3>Cepat Tepat Biologi (LCTB)</h3>
-                <p>Ajang adu ketepatan dan kecepatan analisis materi biologi secara kritis.</p>
+                <p>Ajang adu ketepatan dan kecepatan analisis persoalan biologi secara kritis.</p>
                 <a href="https://forms.gle/LosqWSSYJyXT59HY9" target="_blank" class="btn-apply">
                     Daftar LCTB <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
@@ -577,7 +604,7 @@
         </div>
     </section>
 
-    <!-- Linimasa Kegiatan -->
+    <!-- Linimasa Acara -->
     <div class="timeline-section" id="timeline">
         <div class="section-title" style="margin-bottom: 30px;">
             <h2>Linimasa <span>Rangkaian Acara</span></h2>
@@ -623,7 +650,7 @@
         </div>
     </div>
 
-    <!-- Footer & Kontak -->
+    <!-- Footer -->
     <footer id="kontak">
         <div class="footer-grid">
             <div class="footer-col">
@@ -644,12 +671,12 @@
 
             <div class="footer-col">
                 <h4>Media Sosial & Dokumen</h4>
-                <p>Ikuti akun resmi kami untuk info terkini:</p>
+                <p>Ikuti akun resmi kami untuk pembaruan:</p>
                 <div style="font-size: 1.4rem; margin: 12px 0; display: flex; gap: 15px;">
                     <a href="https://instagram.com/biologyeduexpo9" target="_blank"><i class="fa-brands fa-instagram"></i> @biologyeduexpo9</a>
                 </div>
-                <a href="https://drive.google.com/drive/folders/1MUAWVf6VD2s84QLRH1qhoEXzfhSwS8Hp" target="_blank" style="color: var(--yellow-accent); font-weight: 600;">
-                    <i class="fa-solid fa-file-arrow-down"></i> Unduh File Proposal/Guidebook
+                <a href="https://drive.google.com/drive/folders/1MUAWVf6VD2s84QLRH1qhoEXzfhSwS8Hp" target="_blank" rel="noopener noreferrer" style="color: var(--yellow-accent); font-weight: 600;">
+                    <i class="fa-solid fa-folder-open"></i> Buka Folder Guidebook & Proposal
                 </a>
             </div>
         </div>
@@ -659,33 +686,36 @@
         </div>
     </footer>
 
-    <!-- Script Hitung Mundur -->
+    <!-- Skrip Hitung Mundur Berjalan -->
     <script>
-        // Mengatur waktu deadline ke 2 Oktober 2026
-        const targetDate = new Date("Oct 2, 2026 23:59:59").getTime();
+        const targetDate = new Date("September 26, 2026 23:59:59 GMT+0700").getTime();
 
-        const hitungMundur = setInterval(function() {
-            const sekarang = new Date().getTime();
-            const selisih = targetDate - sekarang;
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
 
-            if (selisih >= 0) {
-                // Perhitungan waktu
-                const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
-                const jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
-                const detik = Math.floor((selisih % (1000 * 60)) / 1000);
-
-                // Menampilkan ke HTML
-                document.getElementById("hari").innerText = hari < 10 ? "0" + hari : hari;
-                document.getElementById("jam").innerText = jam < 10 ? "0" + jam : jam;
-                document.getElementById("menit").innerText = menit < 10 ? "0" + menit : menit;
-                document.getElementById("detik").innerText = detik < 10 ? "0" + detik : detik;
-            } else {
-                // Jika waktu habis
-                clearInterval(hitungMundur);
-                document.querySelector(".timer").innerHTML = "<h4 style='color: var(--green-dark); margin-top: 15px;'>Pendaftaran Telah Ditutup!</h4>";
+            if (difference < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
             }
-        }, 1000);
-    </script> 
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
 </body>
 </html>
